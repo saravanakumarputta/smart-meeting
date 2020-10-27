@@ -29,7 +29,7 @@ const buildings1 = gql`
 	}
 `;
 
-const client = new GraphQLClient('http://smart-meeting.herokuapp.com', {
+const client = new GraphQLClient('https://smart-meeting.herokuapp.com', {
 	headers: { token: 'a123gjhgjsdf6576' }
 });
 
