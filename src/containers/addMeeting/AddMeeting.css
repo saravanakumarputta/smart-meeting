@@ -1,0 +1,38 @@
+.formContainer {
+	background-color: #fff;
+	margin: 0 auto;
+}
+
+.meetingRooms {
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.formContainer h2 {
+	border-bottom: 1px solid #cccccc;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.prl3 {
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+
+.footer {
+	margin-top: 5px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background-color: #ecf2f9;
+	box-shadow: 0 -3px 6px #c8c9ca;
+}
+
+@media all and (max-width: 480px) {
+	.dateInputCont {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+}

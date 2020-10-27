@@ -1,0 +1,8 @@
+.button {
+	background-color: #3943b7;
+	border-radius: 3px;
+	color: #fff;
+	padding: 0.6rem;
+	display: inline-block;
+	cursor: pointer;
+}

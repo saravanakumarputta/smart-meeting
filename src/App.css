@@ -1,0 +1,29 @@
+.heading {
+	padding: 1rem;
+	border-bottom: 1px solid #cccccc;
+	background-color: #fff;
+}
+
+.prl3 {
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+
+.nav > h5 {
+	cursor: pointer;
+}
+
+.nav > h3 {
+	cursor: pointer;
+}
+
+.sectionContainer {
+	width: 80%;
+	margin: 0 auto;
+}
+
+@media all and (max-width: 480px) {
+	.sectionContainer {
+		width: 100%;
+	}
+}
