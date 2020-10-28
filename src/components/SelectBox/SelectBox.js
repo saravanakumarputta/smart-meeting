@@ -23,7 +23,7 @@ export default function SelectBox(props) {
 				<div className={`selectOptions ${isOpen ? 'show' : 'hide'}`}>
 					<div
 						className='dflex flexcolumn'
-						style={{ overflow: 'hidden', overflowY: 'auto', height: '200px' }}>
+						style={{ overflow: 'hidden', overflowY: 'auto', maxHeight: '200px' }}>
 						{options.map((item, index) => {
 							return (
 								<span

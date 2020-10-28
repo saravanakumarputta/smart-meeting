@@ -113,7 +113,7 @@ export default class App extends React.Component {
 						</h5>
 					</div>
 				</div>
-				<div className='flexgrow'>
+				<div className='flexgrow h100'>
 					{currentPage === 'home' ? (
 						<HomeContainer info={buildingsInfo} />
 					) : (

@@ -42,6 +42,7 @@ export default class AddMeeting extends React.Component {
 			return arr;
 		}, []);
 
+		buildings.unshift({ name: 'Select Building', id: null });
 		this.setState({ buildings: buildings });
 		this.setState({ normalizedData: info });
 	}
@@ -69,17 +70,25 @@ export default class AddMeeting extends React.Component {
 	}
 
 	handleBuildingChange(value) {
-		let { normalizedData, meetingDate, startTime, endTime } = this.state;
-		meetingDate = `${meetingDate.getDate()}/${meetingDate.getMonth() + 1}/${meetingDate.getFullYear()}`;
-		let meetingRooms = normalizedData[value.id].meetingRooms;
-		if (typeof startTime === 'object') {
-			startTime = `${startTime.getHours()}:${startTime.getMinutes()}`;
+		if (value.id) {
+			let { normalizedData, meetingDate, startTime, endTime } = this.state;
+			meetingDate = `${meetingDate.getDate()}/${meetingDate.getMonth() + 1}/${meetingDate.getFullYear()}`;
+			let meetingRooms = normalizedData[value.id].meetingRooms;
+			if (meetingRooms) {
+				if (typeof startTime === 'object') {
+					startTime = `${startTime.getHours()}:${startTime.getMinutes()}`;
+				}
+				if (typeof endTime === 'object') {
+					endTime = `${endTime.getHours()}:${endTime.getMinutes()}`;
+				}
+				let freeRooms = calculateFreeRooms(meetingRooms, meetingDate, startTime, endTime);
+				this.setState({ meetingRooms: freeRooms });
+			} else {
+				this.setState({ meetingRooms: {} });
+			}
+		} else {
+			this.setState({ meetingRooms: {} });
 		}
-		if (typeof endTime === 'object') {
-			endTime = `${endTime.getHours()}:${endTime.getMinutes()}`;
-		}
-		let freeRooms = calculateFreeRooms(meetingRooms, meetingDate, startTime, endTime);
-		this.setState({ meetingRooms: freeRooms });
 	}
 
 	handleSave() {
